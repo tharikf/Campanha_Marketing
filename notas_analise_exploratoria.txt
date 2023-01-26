@@ -1,0 +1,99 @@
+
+# Projeto Campanha de Marketing do Banco #
+
+# Anotações da análise exploratória! #
+
+'''
+* Tamanho do dataset: 45211!
+
+	Classe positiva: 5289 (88,30%)
+	Classe negativa: 39922 (11,70%)
+'''
+
+'''
+* Análise de variáveis numéricas!
+	
+
+	* Não há correlação significativa entre as variáveis numéricas.
+	
+		Sem necessidade de lidar com problema de multicolinearidade!
+	
+	* Variáveis numéricas precisarão de normalização no processamento.
+
+		Outliers!
+		Variáveis estão em escalas diferentes!
+		Distribuição das variáveis varia.
+			Balance, Campaign, Pdays e Previous enviesadas à esquerda.
+			Age é o que mais se aproxima de uma normal com a média em torno de 40.
+			Day apresenta uma distribuição um pouco uniforme.
+
+	* Age:
+		Falha em rejeitar a hipótese nula de Kruskal-Wallis. A hipótese nula diz que as medianas dos grupos são iguais.
+		Boxplot não apresenta evidência de relação entre a variável com a classe.
+
+	* Balance:
+		Rejeita a hipótese nula. Boxplot apresenta uma evidência de que maior dinheiro em caixa tende a ter maior chance de conversão.
+
+	* Campaign:
+		Rejeita a hipótese nula. Aprente relação entre uma média de contatos maior NESTA CAMPANHA está relacionada a menor chance de conversão.
+
+	* Pdays:
+		Rejeita a hipótese nula.Aparente relação entre quanto mais tempo sem contato, maior conversão de clientes. 
+
+	* Previous:
+		Rejeita a hipótese nula. Aparente relação entre maior quantidade de contatos ANTERIOR À CAMPANHA gerando maior conversão.
+
+
+'''
+
+
+'''
+Análise de variáveis categóricas!
+
+	* Teste chi2_contingency rejeita a hipótese nula para todas as variáveis em relação a classe.
+		A hipótese nula é a de que não há relação entre as duas variáveis categóricas!
+
+	* Job:
+		Desbalanceada. Algumas categorias possuem mais observações que outras.
+		Algumas categorias parecem mais importantes ao determinar, por exemplo: Retired, Student, Management.
+
+	* Marital Status:
+		Também desbalanceada. Categoria Single parece mais relevante para explicar cliente convertido.
+
+	* Default:
+		Extremamente desbalanceada. A maioria respondeu não. Não parece ter tanto poder de explicação.
+
+	* Housing:
+		Categoria mais equilibrada. Relação aparente é a de que clientes sem casa foram mais convertidos.
+
+	* Loan:
+		Categoria desbalanceada. Relação aparente é a de que clientes sem empréstimo foram mais convertidos.
+
+	* Contact:
+		A categoria de celular apresentou mais clientes convertidos. Clientes da categoria Unknown foram pouco convertidos.
+
+	* Month:
+		Alguns meses apresentam poucas observações. É o caso de Dezembro e Janeiro. Outros possuem bastante observações: Maio, Agosto e Junho.
+		Os meses que parecem se destacar: Abril, Março, Outubro e Setembro.
+
+	* Poutcome:
+		Variável que representa a resposta da última campanha. Muitas observações com Unknown.
+		Uma relação fica em destaque: Quem apresentou sucess em relação a última campanha também apresenta um elevado grau de conversão.
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
